@@ -29,6 +29,8 @@ public class scoreboard : MonoBehaviour
         }
         anim = GetComponent<Animator>();
         highscore.text = PlayerPrefs.GetInt("Highscore", 0).ToString();
+        admanager.instance.requestrewardbasedvideo();
+        
        
         
     }
@@ -103,7 +105,9 @@ public class scoreboard : MonoBehaviour
     public void  menu()
     {
         SceneManager.LoadScene(0);
+        admanager.instance.showvideoad();
     }
+
     public void displayscore()
     {
         StartCoroutine(display(2f));

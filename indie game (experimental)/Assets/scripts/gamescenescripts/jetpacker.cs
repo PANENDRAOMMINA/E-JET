@@ -25,7 +25,7 @@ public class jetpacker : MonoBehaviour
     }
     void Start()
     {
-        
+        admanager.instance.RequestBanner();
     }
 
     // Update is called once per frame

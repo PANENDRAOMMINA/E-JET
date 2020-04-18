@@ -7,9 +7,19 @@ public class pausescript : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject pause;
+    public bool ispaused = false;
+    public static pausescript instance;
+   
+    public void Awake()
+    {
+        if(instance==null)
+        {
+            instance = this;
+        }
+    }
     void Start()
     {
-        
+        admanager.instance.requestinterstitial();
     }
 
     // Update is called once per frame
@@ -17,23 +27,26 @@ public class pausescript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-           
+
+            admanager.instance.showinterstitialad();
             Time.timeScale = 0f;
             pause.SetActive(true);
-            spawner.instance.stopspawning = true;
-            
+           
         }
     }
     public void resume()
     {
+        
         pause.SetActive(false);
         Time.timeScale = 1f;
-        spawner.instance.stopspawning = false;
-
+        
+        
     }
     public void menu()
     {
+        
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+        
     }
 }

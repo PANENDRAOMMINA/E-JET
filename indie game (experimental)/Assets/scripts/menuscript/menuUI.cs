@@ -33,5 +33,8 @@ public class menuUI : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
+    public void help()
+    {
+        SceneManager.LoadScene(3);
+    }
 }

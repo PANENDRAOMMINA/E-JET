@@ -7,12 +7,17 @@ public class rocket : MonoBehaviour
     // Start is called before the first frame update
     public Rigidbody2D rb;
     public float speed;
+    public static rocket instance;
    
     
     
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        if(instance==null)
+        {
+            instance = this;
+        }
         
        
         
@@ -21,7 +26,7 @@ public class rocket : MonoBehaviour
     {
         
     }
-
+   
     // Update is called once per frame
     void Update()
     {
