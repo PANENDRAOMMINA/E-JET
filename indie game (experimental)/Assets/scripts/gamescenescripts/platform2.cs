@@ -34,6 +34,7 @@ public class platform2 : MonoBehaviour
             if (transform.position.x > 0)
             {
                 rb.velocity = Vector2.left * 4f;
+              
             }
             else
             {

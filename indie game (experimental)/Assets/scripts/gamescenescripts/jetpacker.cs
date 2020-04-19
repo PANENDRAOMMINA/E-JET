@@ -11,7 +11,7 @@ public class jetpacker : MonoBehaviour
     public Transform freepos;
     public float checkRadius;
     public LayerMask whatisground;
-    public GameObject burst;
+    public GameObject burst,pod;
     [SerializeField]
     private float jumpforce;
     private ParticleSystem particles;
@@ -33,17 +33,21 @@ public class jetpacker : MonoBehaviour
     {
         isgrounded = Physics2D.OverlapCircle(freepos.position, checkRadius, whatisground);
         
+        
         if(isgrounded==true&&Input.GetMouseButtonDown(0))
         {
             rb.velocity = Vector2.up*jumpforce;
             burst.SetActive(true);
             loadingbar.instance.decreasefuel();
-            
+            pod.GetComponent<Animator>().SetBool("ischarging", true);
+
 
         }
         else if (isgrounded==true)
         {
             loadingbar.instance.increasefuel();
+            pod.GetComponent<Animator>().SetBool("ischarging", true);
+            
 
         }
         if(Input.GetMouseButton(0)&&fill.fillAmount>0)
@@ -51,14 +55,16 @@ public class jetpacker : MonoBehaviour
             rb.velocity = Vector2.up * jumpforce;
             burst.SetActive(true);
             loadingbar.instance.decreasefuel();
+            pod.GetComponent<Animator>().SetBool("ischarging", false);
 
-            
+
         }
         else
         {
             burst.SetActive(false);
             rb.velocity = -Vector2.up * jumpforce;
-            
+            pod.GetComponent<Animator>().SetBool("ischarging", false);
+
         }
         
         
