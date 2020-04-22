@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 public class menuUI : MonoBehaviour
 {
     // Start is called before the first frame update
+    public void Awake()
+    {
+        
+    }
     void Start()
     {
         
@@ -32,6 +36,9 @@ public class menuUI : MonoBehaviour
     public void menu()
     {
         SceneManager.LoadScene(0);
+        
+        
+
     }
     public void help()
     {

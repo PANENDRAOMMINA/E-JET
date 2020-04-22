@@ -45,7 +45,7 @@ public class spawner : MonoBehaviour
         yield return new WaitForSecondsRealtime(0f);
         
         
-        InvokeRepeating("spawnrockets", 1f, 1.35f);
+        InvokeRepeating("spawnrockets", 2f, 1.35f);
        
       
 

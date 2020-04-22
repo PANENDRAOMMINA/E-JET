@@ -8,13 +8,15 @@ public class admanager : MonoBehaviour
 {
     // Start is called before the first frame update
     string App_ID = "ca-app-pub-3878914020152085~7460878118";
-    string BannerAD_ID = "ca-app-pub-3940256099942544/6300978111";
-    string interstitial_ID = "ca-app-pub-3940256099942544/1033173712";
-    string rewardedvideo_ID = "ca-app-pub-3940256099942544/5224354917";
+    string BannerAD_ID = "ca-app-pub-3878914020152085/6441178593";
+    string interstitial_ID = "ca-app-pub-3878914020152085/1245278965";
+    
+
 
     private BannerView bannerView;
     private InterstitialAd interstitial;
-    private RewardBasedVideoAd rewardBasedVideo;
+    
+    
     public static admanager instance;
 
     public void Awake()
@@ -78,17 +80,8 @@ public class admanager : MonoBehaviour
         // Load the interstitial with the request.
         this.interstitial.LoadAd(request);
     }
-    public void requestrewardbasedvideo()
-    {
-        // Get singleton reward based video ad reference.
-        this.rewardBasedVideo = RewardBasedVideoAd.Instance;
+   
 
-
-        // Create an empty ad request.
-        AdRequest request = new AdRequest.Builder().Build();
-        // Load the rewarded video ad with the request.
-        this.rewardBasedVideo.LoadAd(request, rewardedvideo_ID);
-    }
     public void showinterstitialad()
     {
         if (this.interstitial.IsLoaded())
@@ -96,14 +89,9 @@ public class admanager : MonoBehaviour
             this.interstitial.Show();
         }
     }
-    public void showvideoad()
-    {
-        if (rewardBasedVideo.IsLoaded())
-        {
-            rewardBasedVideo.Show();
-        }
-    }
   
+
+
     //EVENTS
     public void HandleOnAdLoaded(object sender, EventArgs args)
     {
