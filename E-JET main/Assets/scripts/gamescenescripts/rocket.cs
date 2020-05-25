@@ -42,10 +42,10 @@ public class rocket : MonoBehaviour
             GameObject.Find("scorecounter").SetActive(false);
             GameObject.Find("Gameover").GetComponent<Animator>().enabled = true;
             GameObject.Find("scoreboard").GetComponent<scoreboard>().displayscore();
-            
-           
-            
+            audiomanager.instance.stop("bg sound");
+            audiomanager.instance.play("gameover");
         }
        
     }
+    
 }

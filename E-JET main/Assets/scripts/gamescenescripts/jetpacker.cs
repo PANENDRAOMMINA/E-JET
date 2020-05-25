@@ -19,12 +19,14 @@ public class jetpacker : MonoBehaviour
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+           
+        rb = GetComponent<Rigidbody2D>(); 
         particles = GetComponent<ParticleSystem>();
         fill = GameObject.Find("loadingfill").GetComponent<Image>();
     }
     void Start()
     {
+        audiomanager.instance.play("bg sound");
         admanager.instance.RequestBanner();
     }
 
@@ -64,7 +66,6 @@ public class jetpacker : MonoBehaviour
             burst.SetActive(false);
             rb.velocity = -Vector2.up * jumpforce;
             pod.GetComponent<Animator>().SetBool("ischarging", false);
-
         }
         
         

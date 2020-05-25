@@ -34,10 +34,10 @@ public class fall : MonoBehaviour
             GameObject.Find("scorecounter").SetActive(false);
             GameObject.Find("Gameover").GetComponent<Animator>().enabled = true;
             GameObject.Find("scoreboard").GetComponent<scoreboard>().displayscore();
+            audiomanager.instance.play("gameover");
+            audiomanager.instance.stop("bg music");
             
-           
-            
-        }
+       }
        
     }
 }

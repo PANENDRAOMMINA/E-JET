@@ -39,12 +39,13 @@ public class pausescript : MonoBehaviour
         
         pause.SetActive(false);
         Time.timeScale = 1f;
+        audiomanager.instance.play("click");
         
         
     }
     public void menu()
     {
-        
+        audiomanager.instance.play("click");
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
         

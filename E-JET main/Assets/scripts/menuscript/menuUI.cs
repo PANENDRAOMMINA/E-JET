@@ -24,24 +24,29 @@ public class menuUI : MonoBehaviour
     public void playgame()
     {
         SceneManager.LoadScene(1);
+        audiomanager.instance.play("click");
     }
     public void exit()
     {
         Application.Quit();
+        audiomanager.instance.play("click");
     }
+
     public void about()
     {
         SceneManager.LoadScene("about");
+        audiomanager.instance.play("click");
+
     }
     public void menu()
     {
         SceneManager.LoadScene(0);
-        
-        
+        audiomanager.instance.play("click");
 
     }
     public void help()
     {
         SceneManager.LoadScene(3);
+        audiomanager.instance.play("click");}
     }
-}
+
