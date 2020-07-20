@@ -19,7 +19,7 @@ public class pausescript : MonoBehaviour
     }
     void Start()
     {
-        admanager.instance.requestinterstitial();
+
     }
 
     // Update is called once per frame
@@ -48,6 +48,5 @@ public class pausescript : MonoBehaviour
         audiomanager.instance.play("click");
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
-        
     }
 }

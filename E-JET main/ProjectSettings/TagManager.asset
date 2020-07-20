@@ -15,7 +15,7 @@ TagManager:
   - 
   - 
   - Ground
-  - spear
+  - pusher
   - rocket
   - 
   - 
@@ -41,6 +41,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: backland
+    uniqueID: 1580439399
+    locked: 0
+  - name: frontland
+    uniqueID: 478590139
     locked: 0
   - name: BG
     uniqueID: 2793952845

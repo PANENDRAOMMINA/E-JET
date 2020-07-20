@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class spawner : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject rocket;
-    public GameObject plat,plat2,warn;
+    public GameObject plat,plat2,plane;
+    public Image Image; 
     public bool stopspawning=false;
     float y1, y2,y3,rtime=0;
     public int r=0;
-    private float time2=0;
+    private float _time2=0;
     private bool started=false;
     public static spawner instance;
     
@@ -46,230 +48,232 @@ public class spawner : MonoBehaviour
         
         
         InvokeRepeating("spawnrockets", 2f, 1.35f);
-       
-      
-
-
     }
     void spawnrockets()
     {
         
 
-        if (time2 < 7 && stopspawning==false)
+        if (_time2 < 7 && stopspawning==false)
         {
-            if((r==2||r==4||r==6||r==8||r==9||r==12||r==15||r==14)&&time2==1)
+            if((r==2||r==4||r==6||r==8||r==9||r==12||r==15||r==14)&&_time2==1)
             {
                 pole1.instance.moved = true;
+                Vector3 p = new Vector3(transform.position.x, 4.72f, 0);
+                Instantiate(plane, p, Quaternion.identity);
             }
-            
+           /*if(r==0&&(_time2==1))
+            {
+                //pusher.instance.forcemove = true;
+            }
+           if(r==0&&(_time2==3))
+            {
+               // pusher.instance.forcemove = false;
+            }*/
+           
             Vector3 v = new Vector3(transform.position.x, Random.Range(y1, y3), 0);
             Instantiate(rocket, v, Quaternion.identity);
             
-            if((r==2||r==4||r==6||r==8||r==9||r==12||r==14)&&(time2==6))
+            if((r==2||r==4||r==6||r==8||r==9||r==12||r==14)&&(_time2==6))
             {
                 pole1.instance.moved = false;
             }
-            time2++;
+            _time2++;
         }
-        else if (time2 >= 7 && time2<17 && stopspawning == false)
+        else if (_time2 >= 7 && _time2<17 && stopspawning == false)
         {
-            if ((r == 3 || r == 5||r==9||r==12||r==15||r==18)&&time2==7)
+           // pusher.instance.forcemove = false;
+            if ((r == 3 || r == 5||r==9||r==12||r==15||r==18)&&_time2==7)
             {
                 pole1.instance.moved = true;
             }
-            if (time2 % 2 != 0)
+            if (_time2 % 2 != 0)
             {
-                
-
                 Vector3 v = new Vector3(transform.position.x, Random.Range(y1, y2), 0);
                 Instantiate(rocket, v, Quaternion.identity);
-               
             }
             else
             {
 
                 Vector3 v = new Vector3(transform.position.x, Random.Range(y2, y3), 0);
                 Instantiate(rocket, v, Quaternion.identity);
-               
             }
-            if((time2==16)&&(r==3||r==5||r==9||r==12||r==15||r==18))
+            if((_time2==16)&&(r==3||r==5||r==9||r==12||r==15||r==18))
             {
                 pole1.instance.moved = false;
             }
-            time2++;
-            
+            _time2++;
         }
-        else if(time2>=17&&time2<29&& stopspawning==false)
+        else if(_time2>=17&&_time2<29&& stopspawning==false)
         {
-            if((r==1||r==4||r==7||r==9||r==13||r==15||r==18||r==19)&&time2==17)
+            if((r==1||r==4||r==7||r==9||r==13||r==15||r==18||r==19)&&_time2==17)
             {
                 pole1.instance.moved = true;
             }
    
-           if(time2==18)
+           if(_time2==18)
             {
                 Vector3 v = new Vector3(transform.position.x, Random.Range(y1, y3), 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if(time2==20)
+            if(_time2==20)
             {
                 Vector3 v = new Vector3(transform.position.x, Random.Range(y1, y3), 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if(time2==22)
+            if(_time2==22)
             {
                 Vector3 v = new Vector3(transform.position.x, Random.Range(y1, y3), 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if(time2==24)
+            if(_time2==24)
             {
                 Vector3 v = new Vector3(transform.position.x, Random.Range(y1, y3), 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if(time2==26)
+            if(_time2==26)
             {
                 Vector3 v = new Vector3(transform.position.x, Random.Range(y1, y3), 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if(time2==28)
+            if(_time2==28)
             {
                 Vector3 v = new Vector3(transform.position.x, Random.Range(y1, y3), 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if ((r ==1||r==4||r==7||r==9||r==13||r==15||r==18||r==19)&&time2==28)
+            if ((r ==1||r==4||r==7||r==9||r==13||r==15||r==18||r==19)&&_time2==28)
             {
                 pole1.instance.moved = false;
             }
-            time2++;
+            _time2++;
          
             
         }
-        else if(time2>=29&&time2<36&&stopspawning==false)
+        else if(_time2>=29&&_time2<36&&stopspawning==false)
         {
-            if((r==2||r==4||r==13||r==8||r==11||r==15||r==16)&&time2==29)
+            if((r==2||r==4||r==13||r==8||r==11||r==15||r==16)&&_time2==29)
             {
                 pole1.instance.moved = true;
             }
             
-            if(time2==30)
+            if(_time2==30)
             {
                 Vector3 v = new Vector3(transform.position.x, -4.04f, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if (time2 == 31)
+            if (_time2 == 31)
             {
                 Vector3 v = new Vector3(transform.position.x, 0, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if(time2==32)
+            if(_time2==32)
             {
                 Vector3 v = new Vector3(transform.position.x, 3.98f, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if(time2==33)
+            if(_time2==33)
             {
                 Vector3 v = new Vector3(transform.position.x, -4.04f, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if(time2==34)
+            if(_time2==34)
             {
                 Vector3 v = new Vector3(transform.position.x, 0, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if(time2==35)
+            if(_time2==35)
             {
                 Vector3 v = new Vector3(transform.position.x, 3.98f, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if ((r == 2 || r == 4 || r == 13 || r == 8 || r == 11 || r == 15 || r == 16) && time2 == 35)
+            if ((r == 2 || r == 4 || r == 13 || r == 8 || r == 11 || r == 15 || r == 16) && _time2 == 35)
             {
                 pole1.instance.moved = false;
             }
 
 
-            time2++;
+            _time2++;
 
         }
-        else if(time2==36)
+        else if(_time2==36)
         {
             
             InvokeRepeating("spawnrockets2", 1f, 0.5f);
-            time2++;
+            _time2++;
         }
        
         
     }
     void spawnrockets2()
     {
-        if(time2>=37&&stopspawning==false)
+        if(_time2>=37&&stopspawning==false)
         {
-            if(time2==37)
+            if(_time2==37)
             {
                 Vector3 v = new Vector3(transform.position.x, -3.98f, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if (time2 == 38)
+            if (_time2 == 38)
             {
                 Vector3 v = new Vector3(transform.position.x, -3.03f, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if (time2 == 39)
+            if (_time2 == 39)
             {
                 Vector3 v = new Vector3(transform.position.x, -1.89f, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if (time2 == 40)
+            if (_time2 == 40)
             {
                 Vector3 v = new Vector3(transform.position.x, -1f, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-           if(time2==41)
+           if(_time2==41)
             {
                 Vector3 v = new Vector3(transform.position.x, 0, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-           if(time2==44&&r>0)
+           if(_time2==44&&r>0)
             {
                 if(r%2!=0)
                 {
-                    spear.instance.forcemove = true;
+                    pusher.instance.forcemove = true;
                 }
                 else
                 {
                     pole1.instance.moved = true;
                 }
             }
-            if(time2==43)
+            if(_time2==43)
             {
                 Vector3 v = new Vector3(transform.position.x,3.98f , 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if(time2==44)
+            if(_time2==44)
             {
                 Vector3 v = new Vector3(transform.position.x, 3.03f, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
            
-            if (time2 == 45)
+            if (_time2 == 45)
             {
                 Vector3 v = new Vector3(transform.position.x, 2.00f, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if (time2 == 46)
+            if (_time2 == 46)
             {
                 Vector3 v = new Vector3(transform.position.x, 1.34f, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if (time2 == 47)
+            if (_time2 == 47)
             {
                 Vector3 v = new Vector3(transform.position.x, 0f, 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-            if (time2 == 47 && r > 0)
+            if (_time2 == 47 && r > 0)
             {
                 if (r % 2 != 0)
                 {
-                    spear.instance.forcemove = false;
+                    pusher.instance.forcemove = false;
                 }
                 else
                 {
@@ -277,12 +281,12 @@ public class spawner : MonoBehaviour
                     pole1.instance.moved = false;
                 }
             }
-            if (time2==48)
+            if (_time2==48)
             {
                 CancelInvoke("spawnrockets2");
                 InvokeRepeating("spawnrock3",1f,1.35f);
             }
-            time2++;
+            _time2++;
         }
       
     }
@@ -291,9 +295,9 @@ public class spawner : MonoBehaviour
         plat.SetActive(true);
         platform.instance.move = true;
         
-        if(time2>=52&&time2<60&&stopspawning == false)
+        if(_time2>=52&&_time2<60&&stopspawning == false)
         {
-            if (time2 % 2 != 0)
+            if (_time2 % 2 != 0)
             {
                 Vector3 v = new Vector3(transform.position.x, Random.Range(0.63f,4.11f), 0);
                 Instantiate(rocket, v, Quaternion.identity);
@@ -305,63 +309,58 @@ public class spawner : MonoBehaviour
             }
         }
        
-        if(time2>=60)
+        if(_time2>=60)
         {
            
             platform.instance.move = false;
-
         }
-        if(time2>=63)
+        if(_time2>=63)
         {
             plat.SetActive(false);
         }
-        if(time2>=64&&(time2==65||time2==69||time2==71)&&time2<72 && stopspawning == false)
+        if(_time2>=64&&(_time2==65||_time2==69||_time2==71)&&_time2<72 && stopspawning == false)
         {
             Instantiate(rocket,new Vector3(transform.position.x,Random.Range(y1,y3)), Quaternion.identity);
             Instantiate(rocket, new Vector3(transform.position.x,Random.Range(y1,y3)), Quaternion.identity);
         }
-        else if(time2>=64&&(time2==65||time2==68)&&time2<71 && stopspawning == false)
+        else if(_time2>=64&&(_time2==65||_time2==68)&&_time2<71 && stopspawning == false)
         {
             Instantiate(rocket, new Vector3(transform.position.x, Random.Range(y1, y3)), Quaternion.identity);
         }
-        if(time2==73 && stopspawning == false)
+        if(_time2==73 && stopspawning == false)
         {
             plat2.SetActive(true);
             platform2.instance.move = true;
         }
-        if(time2>=74&&time2<77 && stopspawning == false)
+        if(_time2>=74&&_time2<77 && stopspawning == false)
         {
             Instantiate(rocket, new Vector3(transform.position.x, Random.Range(-3.16f, y1)), Quaternion.identity);
         }
-        if(time2>=77 && stopspawning == false )
+        if(_time2>=77 && stopspawning == false )
         {
             platform2.instance.move = false;
         }
-        if(time2>=79&&time2<83 && stopspawning == false)
+        if(_time2>=79&&_time2<83 && stopspawning == false)
         {
             plat2.SetActive(false);
             Instantiate(rocket, new Vector3(transform.position.x, Random.Range(y1, y3)), Quaternion.identity);
-            if(time2==81&&(r==2||r==3||r==6||r==9||r==11||r==12||r==14||r==15||r==19))
+            if(_time2==81&&(r==2||r==3||r==6||r==9||r==11||r==12||r==14||r==15||r==19))
             {
-                spear.instance.forcemove = true;
+                pusher.instance.forcemove = true;
             }
 
         }
-        if (time2 == 83 && (r == 2 || r == 3 || r == 6 || r == 9||r==11||r==12||r==14|r==15||r==19))
+        if (_time2 == 83 && (r == 2 || r == 3 || r == 6 || r == 9||r==11||r==12||r==14|r==15||r==19))
         {
-            spear.instance.forcemove = false;
+            pusher.instance.forcemove = false;
         }
 
-        if (time2==83 && stopspawning == false)
+        if (_time2==83 && stopspawning == false)
         {
-            warn.SetActive(true);
+            danger.instance.activated = true;
             
         }
-        if(time2==85 && stopspawning == false)
-        {
-            warn.SetActive(false);
-        }
-        if(time2==86 && stopspawning == false)
+        if(_time2==86 && stopspawning == false)
         {
             Instantiate(rocket, new Vector3(transform.position.x, -4f), Quaternion.identity);
             Instantiate(rocket, new Vector3(transform.position.x, -3.19f), Quaternion.identity);
@@ -371,14 +370,14 @@ public class spawner : MonoBehaviour
             Instantiate(rocket, new Vector3(transform.position.x, -2.0f), Quaternion.identity);
             Instantiate(rocket, new Vector3(transform.position.x, 3.99f), Quaternion.identity);
         }
-        if(time2==88 && stopspawning == false)
+        if(_time2==88 && stopspawning == false)
         {
-            time2 = 0;
+            _time2 = 0;
             r++;
             CancelInvoke("spawnrock3");
            
         }
-        time2++;
+        _time2++;
 
     }
     
