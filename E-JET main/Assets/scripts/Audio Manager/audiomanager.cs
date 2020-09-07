@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Media;
 using UnityEngine.Audio;
 using UnityEngine;
 using System;
@@ -41,6 +40,9 @@ public class audiomanager : MonoBehaviour
     {
         audiofile s = Array.Find(sounds, sound => sound.name == name);
         s.source.Stop();
-
+    }
+    public void setvolume(float t)
+    {
+       
     }
 }

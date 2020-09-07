@@ -7,11 +7,14 @@ public class pausescript : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject pause;
-    public bool ispaused = false;
+    public bool ispaused;
     public static pausescript instance;
+    public Animator anim;
+
    
     public void Awake()
     {
+        ispaused = true;
         if(instance==null)
         {
             instance = this;
@@ -25,12 +28,13 @@ public class pausescript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape)&&ispaused)
         {
 
-            admanager.instance.showinterstitialad();
+            //admanager.instance.showinterstitialad();
             Time.timeScale = 0f;
             pause.SetActive(true);
+            anim.SetBool("ispaused", true);
            
         }
     }
@@ -40,8 +44,6 @@ public class pausescript : MonoBehaviour
         pause.SetActive(false);
         Time.timeScale = 1f;
         audiomanager.instance.play("click");
-        
-        
     }
     public void menu()
     {

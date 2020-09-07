@@ -8,6 +8,7 @@ public class pole1 : MonoBehaviour
     public Rigidbody2D rb;
     public bool moved;
     public static pole1 instance;
+    private Animator anim;
     public void Awake()
     {
         if(instance==null)
@@ -17,7 +18,7 @@ public class pole1 : MonoBehaviour
     }
     void Start()
     {
-        
+        anim = GameObject.Find("Gameover").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -53,7 +54,11 @@ public class pole1 : MonoBehaviour
             Destroy(col.gameObject);
             GameObject.Find("rocket spawner").GetComponent<spawner>().stopspawning = true;
             GameObject.Find("scorecounter").SetActive(false);
-            GameObject.Find("Gameover").GetComponent<Animator>().enabled = true;
+            anim.SetBool("isgameover", true);
+            audiomanager.instance.stop("bg sound");
+            audiomanager.instance.play("gameover");
+            pausescript.instance.ispaused = false;
+
         }
         if (col.gameObject.tag == "rocket")
         {

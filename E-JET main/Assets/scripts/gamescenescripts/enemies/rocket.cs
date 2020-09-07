@@ -8,6 +8,7 @@ public class rocket : MonoBehaviour
     public Rigidbody2D rb;
     public float speed;
     public static rocket instance;
+    private Animator anim;
    
     
     
@@ -18,7 +19,7 @@ public class rocket : MonoBehaviour
         {
             instance = this;
         }
-        
+        anim = GameObject.Find("Gameover").GetComponent<Animator>();
        
         
     }
@@ -38,10 +39,10 @@ public class rocket : MonoBehaviour
         {
             Destroy(col.gameObject);
             GameObject.Find("rocket spawner").GetComponent<spawner>().stopspawning = true;
-            GameObject.Find("scorecounter").SetActive(false);
-            GameObject.Find("Gameover").GetComponent<Animator>().enabled = true;
+            anim.SetBool("isgameover", true);
             audiomanager.instance.stop("bg sound");
             audiomanager.instance.play("gameover");
+            pausescript.instance.ispaused = false;
         }
        
     }

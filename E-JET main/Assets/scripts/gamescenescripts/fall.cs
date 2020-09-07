@@ -30,12 +30,13 @@ public class fall : MonoBehaviour
         {
             Destroy(col.gameObject);
             GameObject.Find("rocket spawner").GetComponent<spawner>().stopspawning = true;
-            GameObject.Find("scorecounter").SetActive(false);
             GameObject.Find("Gameover").GetComponent<Animator>().enabled = true;
-            audiomanager.instance.play("gameover");
             audiomanager.instance.stop("bg music");
-            
-       }
+            audiomanager.instance.play("gameover");
+            pausescript.instance.ispaused = false;
+
+
+        }
        
     }
 }

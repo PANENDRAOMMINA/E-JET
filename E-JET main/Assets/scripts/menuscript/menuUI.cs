@@ -23,7 +23,7 @@ public class menuUI : MonoBehaviour
     }
     public void playgame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
         audiomanager.instance.play("click");
     }
     public void exit()
@@ -34,19 +34,19 @@ public class menuUI : MonoBehaviour
 
     public void about()
     {
-        SceneManager.LoadScene("about");
+        SceneManager.LoadScene(3);
         audiomanager.instance.play("click");
 
     }
     public void menu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);
         audiomanager.instance.play("click");
-
     }
-    public void help()
+    public void tutorial()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(6);
         audiomanager.instance.play("click");}
     }
+  
 
