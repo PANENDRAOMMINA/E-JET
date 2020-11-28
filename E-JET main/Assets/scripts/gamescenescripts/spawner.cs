@@ -7,11 +7,13 @@ public class spawner : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject rocket;
-    public GameObject plat,plat2,plane;
+    public GameObject plat, plat2;
     //PUSHERS SECTION
     public GameObject Pusher1, Pusher2, Pusher3;
     //FAILY ROCKET SECTION
     public GameObject failyrocket;
+    //ROUND ROCKET SECTION
+    public GameObject roundaboutrocket;
 
     public Text scoretext;
 
@@ -36,7 +38,6 @@ public class spawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(spawn(0));
-        
     }
 
     // Update is called once per frame
@@ -64,8 +65,6 @@ public class spawner : MonoBehaviour
             Vector3 v = new Vector3(transform.position.x, Random.Range(y1, y3), 0);
             Instantiate(rocket, v, Quaternion.identity);
             _time2++;
-           
-
         }
         // set 2-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
         else if (  _time2 >= 7 && _time2 < 17 && stopspawning == false)
@@ -80,15 +79,12 @@ public class spawner : MonoBehaviour
                 Vector3 v = new Vector3(transform.position.x, Random.Range(y2, y3), 0);
                 Instantiate(rocket, v, Quaternion.identity);
             }
-           
             _time2++;
            
         }
         // set 3---------------------------------------------------------------------------------------------------------------------------------------------------------------
         else if (_time2 >= 17 && _time2 < 29 && stopspawning == false)
         {
-          
-
             if (_time2 == 18)
             {
                 Vector3 v = new Vector3(transform.position.x, Random.Range(y1, y3), 0);
@@ -120,8 +116,6 @@ public class spawner : MonoBehaviour
                 Instantiate(rocket, v, Quaternion.identity);
             }
             _time2++;
-           
-
         }
         // set 4-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
         else if (_time2 >= 29 && _time2 < 36 && stopspawning == false)
@@ -188,7 +182,6 @@ public class spawner : MonoBehaviour
             if(_time2==37)
             {
                 Vector3 v = new Vector3(transform.position.x, -3.98f, 0);
-                Instantiate(plane, new Vector3(transform.position.x, 3.8f, 0), Quaternion.identity);
                 Instantiate(rocket, v, Quaternion.identity);
             }
             if (_time2 == 38)
@@ -301,9 +294,8 @@ public class spawner : MonoBehaviour
         if(_time2>=79&&_time2<83 && stopspawning == false)
         {
             plat2.SetActive(false);
-            Instantiate(rocket, new Vector3(transform.position.x, Random.Range(y1, y3)), Quaternion.identity);
+            Instantiate(rocket, new Vector3(transform.position.x, Random.Range(y1, y2)), Quaternion.identity);
         }
-
         if (_time2==83 && stopspawning == false)
         {
             danger.instance.activated = true;
@@ -311,7 +303,6 @@ public class spawner : MonoBehaviour
         //set 5--------------------------------------------------------------------------------------------------------------------------
         if(_time2==86 && stopspawning == false)
         {
-            Instantiate(plane, new Vector3(transform.position.x, 3.8f, 0), Quaternion.identity);
             Instantiate(rocket, new Vector3(transform.position.x, -4f), Quaternion.identity);
             Instantiate(rocket, new Vector3(transform.position.x, -2f), Quaternion.identity);
             Instantiate(rocket, new Vector3(transform.position.x, 1.91f), Quaternion.identity);
@@ -331,15 +322,20 @@ public class spawner : MonoBehaviour
    //================================================================================SPAWNING SET 4========================================================================
    //---------------------------------------------------------------------------ROCKET SPAWN TIME=1.25 SEC -------------------------------------------------------------------------
    //--------------------------------------------------------------------------NUMBER OF ROCKETS = 65-------------------------------------------------------------------------------
-    
+   
     void spawnrock4()
     {
         //enter _time2 = 89
        //SET 1--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-       if(_time2>=89&&_time2<95&&stopspawning==false)
+       if(_time2==89)
         {
-            Vector3 v = new Vector3(transform.position.x, Random.Range(y1, y3), 0);      //6 rockets
-            Instantiate(rocket, v, Quaternion.identity);
+            Vector3 v = new Vector3(0, 0, 0);      //6 rockets
+            Instantiate(roundaboutrocket, v, Quaternion.identity);
+        }
+       if(_time2>=91&&_time2<=94)
+        {
+            Vector3 v = new Vector3(transform.position.x, Random.Range(y1, y3), 0);
+            Instantiate(rocket,v,Quaternion.identity);
         }
         //SET 2---------------------------------------------------------------------------------------------------------------------------------------------------------------------
         if(_time2==95&&stopspawning==false)
@@ -403,7 +399,6 @@ public class spawner : MonoBehaviour
         }
         if(_time2==144)
         {
-            Instantiate(plane, new Vector3(transform.position.x, 3.8f, 0), Quaternion.identity);
             platform.instance.move = false;
         }
         if(_time2==147)
@@ -448,7 +443,7 @@ public class spawner : MonoBehaviour
         //SET 9---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         if(_time2==166 && stopspawning == false)
         {
-            Instantiate(plane, new Vector3(transform.position.x, 3.8f, 0), Quaternion.identity);
+           
             danger.instance.activated = true;
         }
         if(_time2==169 && stopspawning == false)
@@ -497,7 +492,7 @@ public class spawner : MonoBehaviour
         }
         if(_time2==183 && stopspawning == false)
         {
-            Instantiate(plane, new Vector3(transform.position.x, 3.8f, 0), Quaternion.identity);
+           
             Pusher2.SetActive(true);
             pusher1.instance.forcemove = true;
         }
@@ -510,7 +505,6 @@ public class spawner : MonoBehaviour
 
         if (_time2== 188 && stopspawning == false)
         {
-            
             Instantiate(rocket, new Vector3(transform.position.x, Random.Range(y1, y3), 0), Quaternion.identity);
             Instantiate(rocket, new Vector3(transform.position.x, Random.Range(y1, y3), 0), Quaternion.identity);
         }
@@ -548,7 +542,6 @@ public class spawner : MonoBehaviour
         }
         if(_time2 == 201 && stopspawning == false)
         {
-            Instantiate(plane, new Vector3(transform.position.x, 3.8f, 0), Quaternion.identity);
             CancelInvoke("spawnrock5");
             InvokeRepeating("spawnrock6",1,1.22f);
         }
@@ -563,6 +556,10 @@ public class spawner : MonoBehaviour
         //SET 1-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         if(_time2>=202&&_time2< 220 && stopspawning == false)
         {
+            if(_time2==205||_time2==218)
+            {
+                Instantiate(roundaboutrocket, new Vector3(0, Random.Range(y1, y2), 0) , Quaternion.identity);
+            }
             Vector3 v = new Vector3(transform.position.x, Random.Range(y1, y3), 0);                              //20
             Instantiate(rocket, v, Quaternion.identity);
         }
@@ -594,7 +591,7 @@ public class spawner : MonoBehaviour
         }
         if(_time2==238)
         {
-            Instantiate(plane, new Vector3(transform.position.x, 3.8f, 0), Quaternion.identity);
+           
             plat2.SetActive(false);
         }
         //SET 4 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -615,7 +612,7 @@ public class spawner : MonoBehaviour
         }
         if (_time2 == 245 && stopspawning == false)
         {
-            Instantiate(plane, new Vector3(transform.position.x, 3.8f, 0), Quaternion.identity);
+          
             Instantiate(rocket, new Vector3(transform.position.x, 1.9f, 0), Quaternion.identity);
             Instantiate(rocket, new Vector3(transform.position.x, -2f, 0), Quaternion.identity);
         }
@@ -624,7 +621,6 @@ public class spawner : MonoBehaviour
             CancelInvoke("spawnrock6");
             InvokeRepeating("spawnrock7", 1, 1.6f);
         }
-
         _time2++;
     }
    // =============================================================================================SPAWNING SET 7================================================================
@@ -655,7 +651,14 @@ public class spawner : MonoBehaviour
         //SET 2-----------------------------------------------------------------------------------------------------------------------------------------------------------------
        if(_time2>=254&&_time2<260)
         {
-            Instantiate(rocket, new Vector3(transform.position.x, Random.Range(y1, y3), 0), Quaternion.identity);   //8
+            if (_time2 == 255||_time2==258)
+            {
+                Instantiate(roundaboutrocket, new Vector3(transform.position.x, Random.Range(y1, y2), 0), Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(rocket, new Vector3(transform.position.x, Random.Range(y1, y3), 0), Quaternion.identity);         //8
+            }                                                                                                           
         }
        //SET 3------------------------------------------------------------------------------------------------------------------------------------------------------------------
        if(_time2==261)
@@ -670,7 +673,6 @@ public class spawner : MonoBehaviour
         }
        if(_time2==263)
         {
-            Instantiate(plane, new Vector3(transform.position.x, 3.8f, 0), Quaternion.identity);
             Pusher2.SetActive(true);
             pusher1.instance.forcemove = true;
         }
@@ -716,7 +718,7 @@ public class spawner : MonoBehaviour
        
         if (_time2 == 275)
         {
-            Instantiate(plane, new Vector3(transform.position.x, 3.8f, 0), Quaternion.identity);
+          
             pole1.instance.moved = true;
             charger.instance.moved = true;
         }
@@ -770,7 +772,6 @@ public class spawner : MonoBehaviour
         }
         if(_time2==318)
         {
-            Instantiate(plane, new Vector3(transform.position.x, 3.8f, 0), Quaternion.identity);
             _time2 = 0;
             CancelInvoke("spawnrock8");
             StartCoroutine(spawn(0));

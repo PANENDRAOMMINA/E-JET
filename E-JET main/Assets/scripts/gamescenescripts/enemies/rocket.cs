@@ -20,7 +20,6 @@ public class rocket : MonoBehaviour
             instance = this;
         }
         anim = GameObject.Find("Gameover").GetComponent<Animator>();
-       
         
     }
     void Start()

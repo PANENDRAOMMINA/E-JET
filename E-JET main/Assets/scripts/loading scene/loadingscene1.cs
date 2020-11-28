@@ -19,6 +19,6 @@ public class loadingscene1 : MonoBehaviour
     IEnumerator loadscene(float time)
     {
         yield return new WaitForSecondsRealtime(time);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("settings");
     }
 }

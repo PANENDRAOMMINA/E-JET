@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - rocket
+  - round rocket
   layers:
   - Default
   - TransparentFX

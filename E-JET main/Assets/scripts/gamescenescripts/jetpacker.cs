@@ -30,6 +30,7 @@ public class jetpacker : MonoBehaviour
         {
             instance = this;
         }
+
     }
     void Start()
     {

@@ -153,7 +153,7 @@ public class tutorialspawner : MonoBehaviour
         }
         if(time>45)
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(4);
         }
          time += Time.deltaTime;
     }
