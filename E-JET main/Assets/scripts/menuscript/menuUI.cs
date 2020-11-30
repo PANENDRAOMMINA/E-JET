@@ -11,7 +11,6 @@ public class menuUI : MonoBehaviour
     public Camera maincamera;
     public void playgame()
     {
-        Time.timeScale = 1f;
         startplayprocedure();
     }
     //ACTIONS WORKING IN MAIN MENU WHEN WE CLICKED THE PLAY BUTTON   ====================================
@@ -66,7 +65,6 @@ public class menuUI : MonoBehaviour
     }
     public void tutorial()
     {
-        Time.timeScale = 1f;
         SceneManager.LoadScene(5);
         audiomanager.instance.play("click");
     }

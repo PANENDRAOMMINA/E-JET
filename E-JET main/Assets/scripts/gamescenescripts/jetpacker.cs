@@ -21,8 +21,8 @@ public class jetpacker : MonoBehaviour
     public static jetpacker instance;
     void Awake()
     {
+      
 
-       
         rb = GetComponent<Rigidbody2D>(); 
         particles = GetComponent<ParticleSystem>();
         fill = GameObject.Find("loadingfill").GetComponent<Image>();

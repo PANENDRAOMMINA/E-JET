@@ -49,7 +49,6 @@ public class rocketscript : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            FindObjectOfType<unityads>().DisplayVideoAD();
             Destroy(col.gameObject);
             GameObject.Find("rocket spawner").GetComponent<spawner>().stopspawning = true;
             GameObject.Find("scorecounter").SetActive(false);
