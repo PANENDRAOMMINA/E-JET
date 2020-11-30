@@ -272,7 +272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 275, y: -3100}
+  m_AnchoredPosition: {x: 280.8, y: -3437}
   m_SizeDelta: {x: 430.4, y: 114.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213724661
@@ -1208,7 +1208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 259.2, y: -2167}
+  m_AnchoredPosition: {x: 280.8, y: -2436}
   m_SizeDelta: {x: 652.1, y: 196.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624159096
@@ -1298,8 +1298,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 252.7, y: -1811}
-  m_SizeDelta: {x: 574.7, y: 336.8}
+  m_AnchoredPosition: {x: 275, y: -2046.2}
+  m_SizeDelta: {x: 574.7, y: 582.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &660718734
 MonoBehaviour:
@@ -1341,6 +1341,14 @@ MonoBehaviour:
     3.BOSCA CEOIL-music
 
     4.CLIP STUDIO PAINT PRO
+
+
+    SPECIAL THANKS TO
+
+    YOUTUBERS
+
+
+    VAIBHAV CHAVAN UND3RDOGS
 
 '
 --- !u!222 &660718735
@@ -2848,7 +2856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 261, y: -2506}
+  m_AnchoredPosition: {x: 280.8, y: -2708}
   m_SizeDelta: {x: 371, y: 246.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1691107742
@@ -2934,8 +2942,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 261.4, y: -1296}
-  m_SizeDelta: {x: 557.2, y: 481.8}
+  m_AnchoredPosition: {x: 275, y: -1324.2}
+  m_SizeDelta: {x: 663.7, y: 538.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1709775476
 MonoBehaviour:
@@ -2968,11 +2976,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'DESIGNED BY:
-
-    OMMINA PANENDRA
-
-'
+  m_Text: "DESIGNED BY:\nOMMINA PANENDRA\n\nUNITY  IOS DEVELOPER \nNICHOLAS NOVELLE\n"
 --- !u!222 &1709775477
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3145,7 +3149,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 259.2, y: -2849}
+  m_AnchoredPosition: {x: 269.2, y: -3062}
   m_SizeDelta: {x: 652.1, y: 196.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1926178462

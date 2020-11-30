@@ -36,6 +36,7 @@ public class rocket : MonoBehaviour
     {
         if (col.gameObject.tag=="Player")
         {
+            FindObjectOfType<unityads>().DisplayInterstitialAD();
             Destroy(col.gameObject);
             GameObject.Find("rocket spawner").GetComponent<spawner>().stopspawning = true;
             anim.SetBool("isgameover", true);

@@ -14,7 +14,7 @@ public class pausescript : MonoBehaviour
    
     public void Awake()
     {
-        ispaused = true;
+        ispaused = false;
         if(instance==null)
         {
             instance = this;
@@ -28,7 +28,7 @@ public class pausescript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)&&ispaused)
+        if(ispaused)
         {
 
             //admanager.instance.showinterstitialad();
@@ -38,17 +38,23 @@ public class pausescript : MonoBehaviour
            
         }
     }
+    public void paused()
+    {
+        ispaused = true;
+    }
     public void resume()
     {
         
         pause.SetActive(false);
+        ispaused = false;
         Time.timeScale = 1f;
         audiomanager.instance.play("click");
     }
     public void menu()
     {
-        audiomanager.instance.play("click");
+        pause.SetActive(false);
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        audiomanager.instance.play("click");
+        SceneManager.LoadScene(4);
     }
 }
